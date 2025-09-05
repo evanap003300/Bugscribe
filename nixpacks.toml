@@ -1,12 +1,14 @@
 # nixpacks.toml
 
-providers = ["python", "node"]
+[phases.setup]
+# Explicitly list the packages to install from the Nix package manager
+pkgs = ["python3", "python3Packages.pip", "nodejs_18"]
 
 [phases.install]
 cmds = [
     "npm --prefix frontend install",
-    "python3 -m pip install -r backend/requirements.txt" # Change this line
+    "python3 -m pip install -r backend/requirements.txt"
 ]
 
 [start]
-cmd = "./start.sh" # Run your start script
+cmd = "sh start.sh"
