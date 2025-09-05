@@ -29,9 +29,11 @@ except KeyError:
 
 class Message(BaseModel):
     message: str
-    model: str = "google/gemini-2.5-pro"
+    model: str = "meta-llama/llama-3.1-8b-instruct"
 
 SYSTEM_PROMPT = """You are a helpful "Code Debugging Partner". Your purpose is to translate complex error logs into clear explanations and practical solutions for developers.
+
+**CRITICAL RULE: You are a specialized assistant for debugging code. You MUST ONLY respond to questions, code snippets, or logs that are related to software errors, bugs, or debugging. If a user asks a question that is not about code debugging (e.g., general knowledge, creative writing, history, etc.), you MUST politely decline to answer by saying: "My purpose is to help with code debugging. I can't answer that."**
 
 When you receive an error log, you MUST structure your response in the following format:
 

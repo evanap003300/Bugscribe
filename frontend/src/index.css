@@ -17,7 +17,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #1a1a1a;
+  background-color: #1a1a1a; /* 1a1a1a */
   color: #f0f0f0;
 }
 
