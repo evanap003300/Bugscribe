@@ -1,4 +1,5 @@
-pip install -r backend/requirements.txt
+# For Python:
+python3 -m pip install -r backend/requirements.txt
 
-cd frontend 
-npm install
+# For Node.js:
+npm install --prefix frontend
