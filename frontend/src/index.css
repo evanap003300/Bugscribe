@@ -43,7 +43,38 @@ body {
   position: absolute;
   top: 1.5rem;
   left: 2rem;
+  right: 2rem;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.chat-header header button {
+  background-color: #adadad; /* BugScribe gray */
+  color: black; /* Changed for contrast */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.chat-header header button:hover {
+  background-color: #999999; /* Darker gray on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+.chat-header header button:active {
+  transform: translateY(0); /* Reset on click */
 }
 
 .logo-placeholder {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
 import Chatbox from './components/Chatbox';
 import './index.css';
 import { sendMessage } from './services/api';
@@ -84,9 +85,17 @@ const App: React.FC = () => {
 
     return (
         <div className="chat-container">
-            {/* Chat Header */}
-            <div className="chat-header" style={{ textAlign: 'left' }}>
+            <div className="chat-header">
                 <div className="logo-placeholder">BugScribe</div>
+                <header>
+                    <SignedOut>
+                        <SignInButton />
+                        <SignUpButton />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                </header>
             </div>
 
             {/* Chat Messages */}
